@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "819783077594",
+    "firebase_url": "https://autochatbot.firebaseio.com",
+    "project_id": "autochatbot",
+    "storage_bucket": "autochatbot.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:819783077594:android:4984e99144cac2a9e81fe3",
+        "android_client_info": {
+          "package_name": "com.example.firebaseauth"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "819783077594-41meft3imtvqpd09qrj10is6klnet7e7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAi4iHOSn1eMOPTscBjNVnRTfEDHT76IYk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "819783077594-41meft3imtvqpd09qrj10is6klnet7e7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
