@@ -5,6 +5,19 @@ public class Data {
     private String desc;
     private String language;
     private String img;
+    private String key;
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
+    // This is the default constructor
+    public Data() {
+    }
 
     public Data(String title, String desc, String language, String img) {
         this.title = title;

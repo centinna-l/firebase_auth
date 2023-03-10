@@ -78,26 +78,23 @@ public class UploadActivity extends AppCompatActivity {
     }
 
     public void saveData() {
-        StorageReference storageReference = FirebaseStorage.getInstance().getReference().child("Images").child(uri.getLastPathSegment());
+        StorageReference storageReference = FirebaseStorage.getInstance().getReference().child("Images")
+                .child(uri.getLastPathSegment());
         AlertDialog.Builder builder = new AlertDialog.Builder(UploadActivity.this);
         builder.setCancelable(false);
         builder.setView(R.layout.progress_layout);
         AlertDialog dialog = builder.create();
         dialog.show();
-
-        // put the image to the firebase storage
         storageReference.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                 Task<Uri> uriTask = taskSnapshot.getStorage().getDownloadUrl();
-                while (!uriTask.isComplete()) {
-                    Uri urlImage = uriTask.getResult();
-                    imageUrl = urlImage.toString().isEmpty() ? "" : urlImage.toString().trim();
-                    // upload the data to realtime database
-                    uploadData();
-                    dialog.dismiss();
-                    finish();
-                }
+                while (!uriTask.isComplete()) ;
+                Uri urlImage = uriTask.getResult();
+                imageUrl = urlImage.toString().isEmpty() ? "" : urlImage.toString();
+                uploadData();
+                dialog.dismiss();
+                finish();
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
